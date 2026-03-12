@@ -1,0 +1,17 @@
+text="Computer science"
+print(text.upper())
+print(text)
+
+
+f=open("sample.txt","w")
+f.write(text)
+f.close()
+
+
+f=open("sample.txt","r")
+print(f.read())
+f.close()
+
+
+COMPUTER SCIENCE
+Computer science
