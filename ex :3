@@ -1,0 +1,12 @@
+def add(a,b):
+  return a + b
+class samble:
+  def display(self):
+    print("This is a class method")
+print(add(5,3))
+obj=samble()
+obj.display()
+
+
+8
+This is a class method
