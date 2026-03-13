@@ -1,0 +1,11 @@
+x=[1,2,3]
+y=[2,4,6]
+mx=sum(x)/len(x)
+my=sum(y)/len(y)
+num=sum((x[i]-mx)*(y[i]-my)for i in range(len(x)))
+den=(sum((x[i]-mx)**2 for i in range(len(x)))*sum((y[i]-my)**2 for i in range(len(y))))**0.5
+print(num/den)
+
+
+
+1.0
