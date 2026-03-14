@@ -1,0 +1,9 @@
+import seaborn as sns 
+import matplotlib.pyplot as plt 
+data = [1,2,3,4,5] 
+sns.histplot(data) 
+plt.show()
+
+
+
+Histogram plotted. 
