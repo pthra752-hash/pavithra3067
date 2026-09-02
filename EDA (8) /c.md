@@ -17,17 +17,11 @@
 PROGRAM 1
 
 import pandas as pd
-# Load dataset
 df = pd.read_csv("Rolling_Dataset.csv")
-# Convert Date column into datetime format
 df["Date"] = pd.to_datetime(df["Date"], dayfirst=True)
-# Set Date as index
 df.set_index("Date", inplace=True)
-# Calculate Rolling Mean
 df["Rolling_Mean"] = df["Sales"].rolling(window=7).mean()
-# Calculate Rolling Standard Deviation
 df["Rolling_SD"] = df["Sales"].rolling(window=7).std()
-# Display result
 print(df[["Sales", "Rolling_Mean", "Rolling_SD"]]
 
 OUT PUT 1
@@ -41,15 +35,10 @@ PROGRAM 2
 Program 2: Plot Original Sales and Rolling Mean
 import pandas as pd
 import matplotlib.pyplot as plt
-# Load dataset
 df = pd.read_csv("Rolling_Dataset.csv")
-# Convert Date column
 df["Date"] = pd.to_datetime(df["Date"], dayfirst=True)
-# Set index
 df.set_index("Date", inplace=True)
-# Rolling Mean
 df["Rolling_Mean"] = df["Sales"].rolling(window=7).mean()
-# Plot
 plt.figure(figsize=(10,5))
 plt.plot(df.index, df["Sales"], label="Original Sales")
 plt.plot(df.index, df["Rolling_Mean"], linewidth=3, label="7-Day Rolling Mean")
@@ -69,15 +58,10 @@ PROGRAM 3
 
 import pandas as pd
 import matplotlib.pyplot as plt
-# Load dataset
 df = pd.read_csv("Rolling_Dataset.csv")
-# Convert Date column
 df["Date"] = pd.to_datetime(df["Date"], dayfirst=True)
-# Set index
-df.set_index("Date", inplace=True)
-# Rolling Standard Deviation
+df.set_index("Date", inplace=True
 df["Rolling_SD"] = df["Sales"].rolling(window=7).std()
-# Plot
 plt.figure(figsize=(10,5))
 plt.plot(df.index, df["Rolling_SD"], linewidth=3)
 plt.title("7-Day Rolling Standard Deviation")
