@@ -34,23 +34,13 @@ S.No	Date	Product	Category	Sales	Orders	Revenue	Rating
 
 
 
-Python Program
+Program
 Program 1: Down-Sampling (Daily to Monthly)
 import pandas as pd
-
-# Read dataset
 df = pd.read_csv("Resample_Dataset.csv")
-
-# Convert Date to datetime
 df['Date'] = pd.to_datetime(df['Date'], dayfirst=True)
-
-# Set Date as index
 df.set_index('Date', inplace=True)
-
-# Downsampling daily Sales into 10-day periods
 downsampled = df['Sales'].resample('10D').sum()
-
-# Display 10 data
 print("DOWN SAMPLED SALES DATA:")
 print(downsampled.head(10))
 
@@ -71,20 +61,10 @@ Name: Sales, dtype: int64
 
 Program 2: up-Sampling (Daily to Monthly)
 import pandas as pd
-
-# Read dataset
 df = pd.read_csv("Resample_Dataset.csv")
-
-# Convert Date to datetime
 df['Date'] = pd.to_datetime(df['Date'], dayfirst=True)
-
-# Set Date as index
 df.set_index('Date', inplace=True)
-
-# Upsampling daily Sales into 12-hour intervals
 upsampled = df['Sales'].resample('12h').ffill()
-
-# Display first 10 data
 print("UP SAMPLED SALES DATA:")
 print(upsampled.head(10))
 
