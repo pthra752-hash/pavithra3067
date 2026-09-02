@@ -34,15 +34,10 @@ PROGARM 1
 Python Program
 Program 1: Perform Independent Sample t-test
 import pandas as pd
-from scipy.stats import ttest_ind
-# Load the dataset
 df = pd.read_csv("TTest_Dataset.csv")
-# Create two groups
 clothing = df[df["Category"] == "Clothing"]["Sales"]
 footwear = df[df["Category"] == "Footwear"]["Sales"]
-# Perform Independent Sample t-test
 t_value, p_value = ttest_ind(clothing, footwear)
-# Display results
 print("t-value :", t_value)
 print("p-value :", p_value)
 
@@ -53,18 +48,13 @@ PROGRAM 2
 
 import pandas as pd
 from scipy.stats import ttest_ind
-# Load the dataset
 df = pd.read_csv("TTest_Dataset.csv")
-# Create two groups
 clothing = df[df["Category"] == "Clothing"]["Sales"]
 footwear = df[df["Category"] == "Footwear"]["Sales"]
-# Perform Independent Sample t-test
 t_value, p_value = ttest_ind(clothing, footwear)
-# Significance level
 alpha = 0.05
 print("t-value :", t_value)
 print("p-value :", p_value)
-# Conclusion
 if p_value < alpha:
     print("\nConclusion:")
     print("Reject the Null Hypothesis (H0)")
@@ -84,9 +74,7 @@ OUT PUT 2
 PROGRAM 3
 
 import pandas as pd
-# Load the dataset
 df = pd.read_csv("TTest_Dataset.csv")
-# Group statistics
 stats = df.groupby("Category")["Sales"].agg(["count", "mean", "std", "min", "max"])
 print("Sales Statistics by Category")
 print(stats)
